@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import ModelView from "./ModelView";
 
 const Hero = () => {
   useEffect(() => {
@@ -13,6 +14,7 @@ const Hero = () => {
       stagger: 0.1,
       ease: "elastic.out(1,0,3)",
       duration: 1,
+      delay: 0.5,
       transformOrigin: "left top",
     });
   }, []);
@@ -36,7 +38,11 @@ const Hero = () => {
             </Typography>
           </Box>
         </Grid>
-        <Grid item md={6} xs={12}></Grid>
+        <Grid item md={6} xs={12}>
+          <Box sx={{ height: "100%" }}>
+            <ModelView />
+          </Box>
+        </Grid>
       </Grid>
     </Box>
   );
